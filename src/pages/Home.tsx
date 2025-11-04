@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Sparkles, Clock, MapPin, Phone, Instagram, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-car.jpg";
 import exteriorImage from "@/assets/exterior-detail.jpg";
 import interiorImage from "@/assets/interior-detail.jpg";
@@ -174,6 +174,122 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-24 px-4 bg-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+              Contact Us
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Get in touch for a premium detailing experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Info Cards */}
+            <div className="space-y-6">
+              <div className="bg-card p-8 rounded-xl border border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-5">
+                  <div className="bg-primary/10 p-4 rounded-lg">
+                    <Phone className="text-primary" size={28} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-serif text-2xl font-semibold mb-3">Call or WhatsApp</h3>
+                    <a
+                      href="tel:+33688911561"
+                      className="text-xl text-muted-foreground hover:text-primary transition-colors font-medium"
+                    >
+                      +33 6 88 91 15 61
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-2">Available for calls and WhatsApp</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card p-8 rounded-xl border border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-5">
+                  <div className="bg-primary/10 p-4 rounded-lg">
+                    <MapPin className="text-primary" size={28} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-serif text-2xl font-semibold mb-3">Service Area</h3>
+                    <p className="text-lg text-muted-foreground">Monaco & Surrounding Areas</p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Beausoleil • Menton • Roquebrune • Eze • Cap-d'Ail • Villefranche • Nice
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card p-8 rounded-xl border border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-start space-x-5">
+                  <div className="bg-primary/10 p-4 rounded-lg">
+                    <Instagram className="text-primary" size={28} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-serif text-2xl font-semibold mb-3">Follow Us</h3>
+                    <a
+                      href="https://instagram.com/cleanstrike_"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl text-muted-foreground hover:text-primary transition-colors font-medium"
+                    >
+                      @cleanstrike_
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-2">See our latest work and results</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Contact CTA */}
+            <div className="flex flex-col justify-center">
+              <div className="bg-gradient-to-br from-secondary to-secondary/50 p-10 rounded-2xl border border-border shadow-lg">
+                <h3 className="font-serif text-3xl font-bold mb-6">Ready to Book?</h3>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  Experience the finest mobile car detailing service in Monaco. Our team comes directly to you, ensuring your vehicle receives the premium care it deserves.
+                </p>
+                
+                <div className="space-y-4">
+                  <Button
+                    asChild
+                    className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white h-14 text-lg shadow-lg hover:shadow-xl transition-all font-semibold"
+                  >
+                    <a href="https://wa.me/33688911561?text=Hello! I'm interested in your car detailing services." target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2" size={24} />
+                      WhatsApp Us Now
+                    </a>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full h-14 text-lg border-2 hover:bg-primary hover:text-white hover:border-primary transition-all font-semibold"
+                  >
+                    <a href="tel:+33688911561">
+                      <Phone className="mr-2" size={20} />
+                      Call +33 6 88 91 15 61
+                    </a>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full h-14 text-lg border-2 hover:bg-primary hover:text-white hover:border-primary transition-all font-semibold"
+                  >
+                    <Link to="/contact">
+                      View Full Contact Page
+                      <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
