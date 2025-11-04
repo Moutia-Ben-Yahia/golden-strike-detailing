@@ -118,7 +118,7 @@ Message: ${formData.message}`;
         />
       </div>
 
-      <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
+      <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-lg py-7 shadow-lg hover:shadow-xl transition-all font-semibold">
         Send Inquiry via WhatsApp
       </Button>
     </form>

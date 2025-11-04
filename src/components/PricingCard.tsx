@@ -14,35 +14,44 @@ interface PricingCardProps {
 const PricingCard = ({ title, description, price, frequency, features, popular }: PricingCardProps) => {
   return (
     <Card
-      className={`relative overflow-hidden transition-all duration-500 hover:shadow-gold ${
-        popular ? "border-2 border-primary shadow-elegant" : "border-border"
+      className={`relative overflow-hidden transition-all duration-500 hover:shadow-gold hover:-translate-y-2 ${
+        popular ? "border-2 border-primary shadow-elegant scale-105" : "border-border"
       }`}
     >
       {popular && (
-        <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-semibold">
-          Popular
+        <div className="absolute top-0 right-0 bg-gradient-to-r from-primary to-gold-soft text-white px-6 py-2 text-sm font-bold rounded-bl-lg shadow-md">
+          POPULAR
         </div>
       )}
-      <CardHeader className="text-center pb-8 pt-10">
-        <CardTitle className="font-serif text-2xl mb-2">{title}</CardTitle>
-        <CardDescription className="text-base">{description}</CardDescription>
-        <div className="mt-6">
-          <span className="text-4xl font-bold text-primary">{price}</span>
-          <span className="text-muted-foreground"> / {frequency}</span>
+      <CardHeader className="text-center pb-8 pt-12">
+        <CardTitle className="font-serif text-3xl mb-3">{title}</CardTitle>
+        <CardDescription className="text-base leading-relaxed px-2">{description}</CardDescription>
+        <div className="mt-8 mb-4">
+          <div className="inline-block">
+            <span className="text-5xl font-bold text-primary">{price}</span>
+            <span className="text-muted-foreground text-lg ml-1">/ {frequency}</span>
+          </div>
         </div>
       </CardHeader>
-      <CardContent>
-        <ul className="space-y-3">
+      <CardContent className="px-6">
+        <ul className="space-y-4">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start space-x-3">
-              <Check size={20} className="text-primary mt-0.5 flex-shrink-0" />
-              <span className="text-sm">{feature}</span>
+            <li key={index} className="flex items-start space-x-3 group">
+              <div className="bg-primary/10 rounded-full p-1 mt-0.5">
+                <Check size={16} className="text-primary flex-shrink-0" />
+              </div>
+              <span className="text-sm leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="pt-6">
-        <Button asChild className={`w-full ${popular ? "bg-primary hover:bg-primary/90" : ""}`}>
+      <CardFooter className="pt-8 px-6 pb-6">
+        <Button 
+          asChild 
+          className={`w-full h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all ${
+            popular ? "bg-primary hover:bg-primary/90" : "bg-secondary hover:bg-secondary/80 text-foreground"
+          }`}
+        >
           <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
             Select Plan
           </a>

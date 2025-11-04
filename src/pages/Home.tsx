@@ -81,7 +81,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-lg px-8 py-6"
+              className="bg-primary hover:bg-primary/90 text-lg px-10 py-7 shadow-2xl hover:shadow-gold transition-all font-semibold"
             >
               <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
                 Book Now <ArrowRight className="ml-2" />
@@ -91,7 +91,7 @@ const Home = () => {
               asChild
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground text-lg px-8 py-6"
+              className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-foreground text-lg px-10 py-7 shadow-xl transition-all font-semibold"
             >
               <Link to="/services">View Services</Link>
             </Button>
@@ -100,53 +100,56 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-24 px-4 bg-background">
+        <div className="container mx-auto max-w-5xl text-center">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">
             Premium Mobile Car Detailing in Monaco
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             CleanStrike Unit brings professional car detailing directly to you. Whether you're at your residence, parking spot, or hotel in Monaco, our expert team delivers showroom-quality results with precision and care. We specialize in luxury and supercars, ensuring every detail meets the highest standards.
           </p>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 px-4 bg-secondary">
+      <section className="py-24 px-4 bg-secondary">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
               Our Services
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               Professional detailing solutions for every need
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-card rounded-lg overflow-hidden shadow-md hover:shadow-gold transition-all duration-500"
+                className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-gold transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="h-56 overflow-hidden">
+                <div className="h-64 overflow-hidden relative">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <div className="p-6">
-                  <service.icon className="text-primary mb-4" size={32} />
-                  <h3 className="font-serif text-2xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                <div className="p-8">
+                  <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-5">
+                    <service.icon className="text-primary" size={28} />
+                  </div>
+                  <h3 className="font-serif text-2xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 px-10 py-7 text-lg shadow-lg hover:shadow-xl transition-all font-semibold">
               <Link to="/services">
                 View All Services <ArrowRight className="ml-2" />
               </Link>
@@ -156,13 +159,13 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-24 px-4 bg-background">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
               Trusted by Discerning Clients
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               Excellence reflected in every review
             </p>
           </div>
@@ -176,18 +179,19 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary via-gold-soft to-gold-light">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="py-24 px-4 bg-gradient-to-br from-primary via-gold-soft to-gold-light relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="font-serif text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
             Ready to Experience the Difference?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-xl md:text-2xl text-white/95 mb-10 leading-relaxed">
             Fast, mobile, and discreet — we come directly to your parking, residence, or hotel.
           </p>
           <Button
             asChild
             size="lg"
-            className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
+            className="bg-white text-primary hover:bg-white/95 text-lg px-12 py-7 shadow-2xl hover:shadow-3xl transition-all font-bold hover:scale-105"
           >
             <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
               Book Your Appointment Today <ArrowRight className="ml-2" />
