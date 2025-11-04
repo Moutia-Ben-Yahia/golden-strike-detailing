@@ -65,12 +65,21 @@ const Services = () => {
       <WhatsAppButton />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-secondary to-background">
-        <div className="container mx-auto max-w-7xl text-center">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 animate-fade-up">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={exteriorImage}
+            alt="Car detailing services"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        </div>
+        
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-up">
+          <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-up">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Premium mobile car detailing tailored to your vehicle's needs
           </p>
         </div>
