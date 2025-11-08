@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PricingCardProps {
   title: string;
@@ -52,9 +53,9 @@ const PricingCard = ({ title, description, price, frequency, features, popular }
             popular ? "bg-primary hover:bg-primary/90" : "bg-secondary hover:bg-secondary/80 text-foreground"
           }`}
         >
-          <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+          <Link to="/booking">
             Select Plan
-          </a>
+          </Link>
         </Button>
       </CardFooter>
     </Card>

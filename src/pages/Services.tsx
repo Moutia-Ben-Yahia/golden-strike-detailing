@@ -2,6 +2,7 @@ import ServiceCard from "@/components/ServiceCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { SEO } from "@/components/SEO";
 import exteriorImage from "@/assets/exterior-detail.jpg";
 import interiorImage from "@/assets/interior-detail.jpg";
 import engineImage from "@/assets/engine-detail.jpg";
@@ -60,9 +61,16 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <WhatsAppButton />
+    <>
+      <SEO
+        title="Car Detailing Services Monaco | Interior & Exterior Cleaning - CleanStrike Unit"
+        description="Professional mobile car detailing services in Monaco. Full detail, interior cleaning, exterior detailing, ceramic coating, and more. Premium service from €89."
+        keywords="car detailing Monaco, interior cleaning Monaco, exterior detailing Monaco, ceramic coating Monaco, mobile car wash Monaco, car cleaning services Monaco, luxury car detailing"
+        url="https://cleanstrikeunit.com/services"
+      />
+      <div className="min-h-screen">
+        <Navbar />
+        <WhatsAppButton />
 
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -153,6 +161,7 @@ const Services = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

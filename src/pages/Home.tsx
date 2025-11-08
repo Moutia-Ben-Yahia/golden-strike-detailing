@@ -6,9 +6,12 @@ import exteriorImage from "@/assets/exterior-detail.jpg";
 import interiorImage from "@/assets/interior-detail.jpg";
 import engineImage from "@/assets/engine-detail.jpg";
 import TestimonialCard from "@/components/TestimonialCard";
+import BookingForm from "@/components/BookingForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { SEO } from "@/components/SEO";
+import { StructuredData } from "@/components/StructuredData";
 
 const Home = () => {
   const testimonials = [
@@ -54,7 +57,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO />
+      <StructuredData />
+      <div className="min-h-screen">
       <Navbar />
       <WhatsAppButton />
 
@@ -83,9 +89,9 @@ const Home = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-lg px-10 py-7 shadow-2xl hover:shadow-gold transition-all font-semibold"
             >
-              <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+              <Link to="/booking">
                 Book Now <ArrowRight className="ml-2" />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
@@ -178,15 +184,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Booking Section */}
       <section className="py-24 px-4 bg-background">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
-              Contact Us
+              Book Your Service
             </h2>
             <p className="text-xl text-muted-foreground">
-              Get in touch for a premium detailing experience
+              Choose your preferred date, time, and services. We'll confirm within 24 hours.
             </p>
           </div>
 
@@ -245,23 +251,20 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Quick Contact CTA */}
-            <div className="flex flex-col justify-center">
-              <div className="bg-gradient-to-br from-secondary to-secondary/50 p-10 rounded-2xl border border-border shadow-lg">
-                <h3 className="font-serif text-3xl font-bold mb-6">Ready to Book?</h3>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Experience the finest mobile car detailing service in Monaco. Our team comes directly to you, ensuring your vehicle receives the premium care it deserves.
+              <div className="bg-gradient-to-br from-secondary to-secondary/50 p-8 rounded-2xl border border-border shadow-lg">
+                <h3 className="font-serif text-2xl font-bold mb-4">Quick Contact</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Prefer to contact us directly? Reach out via WhatsApp or phone.
                 </p>
                 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <Button
                     asChild
-                    className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white h-14 text-lg shadow-lg hover:shadow-xl transition-all font-semibold"
+                    className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white h-12 shadow-lg hover:shadow-xl transition-all font-semibold"
                   >
                     <a href="https://wa.me/33688911561?text=Hello! I'm interested in your car detailing services." target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2" size={24} />
+                      <MessageCircle className="mr-2" size={20} />
                       WhatsApp Us Now
                     </a>
                   </Button>
@@ -269,25 +272,21 @@ const Home = () => {
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full h-14 text-lg border-2 hover:bg-primary hover:text-white hover:border-primary transition-all font-semibold"
+                    className="w-full h-12 border-2 hover:bg-primary hover:text-white hover:border-primary transition-all font-semibold"
                   >
                     <a href="tel:+33688911561">
-                      <Phone className="mr-2" size={20} />
+                      <Phone className="mr-2" size={18} />
                       Call +33 6 88 91 15 61
                     </a>
                   </Button>
-
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full h-14 text-lg border-2 hover:bg-primary hover:text-white hover:border-primary transition-all font-semibold"
-                  >
-                    <Link to="/contact">
-                      View Full Contact Page
-                      <ArrowRight className="ml-2" size={20} />
-                    </Link>
-                  </Button>
                 </div>
+              </div>
+            </div>
+
+            {/* Booking Form */}
+            <div>
+              <div className="bg-card p-8 rounded-lg border border-border shadow-elegant">
+                <BookingForm />
               </div>
             </div>
           </div>
@@ -309,15 +308,16 @@ const Home = () => {
             size="lg"
             className="bg-white text-primary hover:bg-white/95 text-lg px-12 py-7 shadow-2xl hover:shadow-3xl transition-all font-bold hover:scale-105"
           >
-            <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+            <Link to="/booking">
               Book Your Appointment Today <ArrowRight className="ml-2" />
-            </a>
+            </Link>
           </Button>
         </div>
       </section>
 
       <Footer />
     </div>
+    </>
   );
 };
 

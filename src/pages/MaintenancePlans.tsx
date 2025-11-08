@@ -2,6 +2,7 @@ import PricingCard from "@/components/PricingCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { SEO } from "@/components/SEO";
 import interiorImage from "@/assets/interior-detail.jpg";
 
 const MaintenancePlans = () => {
@@ -52,9 +53,16 @@ const MaintenancePlans = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <WhatsAppButton />
+    <>
+      <SEO
+        title="Car Maintenance Plans Monaco | Weekly & Monthly Detailing - CleanStrike Unit"
+        description="Affordable maintenance plans for your car in Monaco. Weekly wash from €79, bi-weekly detail from €150, monthly premium care from €259. Keep your vehicle pristine year-round."
+        keywords="car maintenance Monaco, weekly car wash Monaco, monthly detailing Monaco, car care plans Monaco, maintenance packages Monaco, regular car cleaning Monaco"
+        url="https://cleanstrikeunit.com/maintenance"
+      />
+      <div className="min-h-screen">
+        <Navbar />
+        <WhatsAppButton />
 
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -143,6 +151,7 @@ const MaintenancePlans = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

@@ -25,7 +25,6 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Maintenance Plans", path: "/maintenance" },
-    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -54,9 +53,9 @@ const Navbar = () => {
               </Link>
             ))}
             <Button asChild className="bg-primary hover:bg-primary/90">
-              <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+              <Link to="/booking">
                 Book Now
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -83,9 +82,9 @@ const Navbar = () => {
               </Link>
             ))}
             <Button asChild className="w-full mt-4 bg-primary hover:bg-primary/90">
-              <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+              <Link to="/booking">
                 Book Now
-              </a>
+              </Link>
             </Button>
           </div>
         )}

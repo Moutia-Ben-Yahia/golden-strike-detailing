@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 interface ServiceCardProps {
   title: string;
@@ -38,9 +39,15 @@ const ServiceCard = ({ title, description, image, prices }: ServiceCardProps) =>
       </CardContent>
       <CardFooter className="pt-6">
         <Button asChild className="w-full bg-primary hover:bg-primary/90 h-12 text-base font-semibold shadow-md hover:shadow-lg transition-all">
-          <a href="https://beacons.ai/cleanstrike" target="_blank" rel="noopener noreferrer">
+          <Link 
+            to="/booking" 
+            state={{ 
+              selectedService: title,
+              scrollToForm: true 
+            }}
+          >
             Book This Service
-          </a>
+          </Link>
         </Button>
       </CardFooter>
     </Card>
